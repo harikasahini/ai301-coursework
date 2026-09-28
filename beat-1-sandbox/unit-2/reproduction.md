@@ -30,10 +30,22 @@ I'll start by reproducing the crash from a malformed stored hash, confirm it aga
 
 **Reproduction comment**
 
-[Link to the comment where you posted your reproduction. It must record the environment
-(OS, relevant versions, code state), steps a stranger could follow, and what you observed.
-**Then paste the text of that comment underneath the link** — the pasted text is what this
-field is graded on, so copy across what you actually posted.]
+[Reproduction Comment link](https://github.com/codepath/pathreview-ai301-fa26-s3/issues/72#issuecomment-5878511933)
+**Environment**: Python 3.11 (this repo's targeted version, per SETUP.md and CI). passlib 1.7.4. Commit 2f4e82f.
+Dependencies come from pyproject.toml (no requirements.txt or lockfile in this repo), installed via pip install -e ".[dev]".
+
+**Reproduction Steps:**
+```
+python3.11 -m pytest tests/unit/test_security.py -k "test_verify_with_wrong_hash_format" -v and, to see the raw exception the xfail marker hides:
+    python3.11 -c "
+    from core.security import verify_password
+    result = verify_password('password', 'not_a_valid_bcrypt_hash')
+    print(result)
+    "
+```
+**Observed**: The pytest run reports XFAIL, confirming the test fails as its marker states, but pytest's xfail output doesn't itself show the exception. The standalone call does: passlib.exc.UnknownHashError: hash could not be identified raised inside passlib (passlib/context.py, _identify_record), not in this repo's code. verify_password (core/security.py:37) is a one-line pass-through to pwd_context.verify(...) with no exception handling, so passlib's error propagates instead of being caught and returned as False.
+
+Reproduced on Python 3.11, the version this repo's CI targets: the error message and code path match the issue exactly.
 
 ## Eval iterations
 
