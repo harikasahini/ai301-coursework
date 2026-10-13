@@ -34,7 +34,7 @@ Run 3 (full, final): 20/20 scored items, bar met (18/20: PASS), every category m
 
 **Package analysis**
 
-pkg-02 (clear-accept): my rubric's first verdict was reject, failed on tests-match-plan; the gold label is accept. My first wording of that check required each command in the plan's test plan to appear with its printed output. [ONE SENTENCE FROM pkg-02: what its test evidence actually shows, for example that it reports before and after results without pasting every command's full output.] My check read that as no proof, even though the staff accepted the package. After I loosened the check, my rubric's verdict on pkg-02 became accept, matching gold, and it stayed accept in the final run.
+pkg-02 (clear-accept): my rubric's first verdict was reject, failed on tests-match-plan; the gold label is accept. My first wording of that check required each command in the plan's test plan to appear with its printed output."too many arguments". My check read that as no proof, even though the staff accepted the package. After I loosened the check, my rubric's verdict on pkg-02 became accept, matching gold, and it stayed accept in the final run.
 
 **Check rationale**
 
