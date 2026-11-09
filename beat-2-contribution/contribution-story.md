@@ -1,4 +1,4 @@
-# Contribution: [Issue Title]
+# Contribution: Fix typescript:S1077: Provide accessible names for SVG elements
 
 Path: `beat-2-contribution/contribution-story.md`
 
@@ -8,10 +8,9 @@ format criteria grade exactly that. Your course repo link is the whole submissio
 files and no evidence uploads are part of Assignment 5.
 
 **Contribution Number:** [1]
-**Student:** [Student name]
-**GitHub Username:** [your GitHub username, exactly as it appears on your profile - no @, no
-profile URL. Your comments upstream are identified by this name.]
-**Issue:** [GitHub issue link]
+**Student:** Harika Sahini
+**GitHub Username:** harikasahini
+**Issue:** https://github.com/KaotoIO/kaoto/issues/4338
 **Pull Request:** [GitHub PR link, once opened]
 
 One repository, built across units 5 to 8, telling the whole story of your real
@@ -55,10 +54,9 @@ happened; these entries are the toolkit's own timeline.
 All four entries are graded. Keep every heading below, and fill each
 one in the week it belongs to.
 
-**Unit 5: [one line on the tool work]**
+**Unit 5: Grew my issue-select skill into issue-scout, which searches GitHub with five queries from my fit profile, ranks the results, and grades the top five.**
 
-[2-4 sentences: what you built (the scout, your strategy), what broke
-or fell short, what changed because of it.]
+I built issue-scout by putting a search strategy (five queries traced to sentences in my fit profile, plus ranking rules) in front of my Unit 1 rubric, so it finds issues itself instead of only grading ones I hand it. My first scan took 453 results down to 109 and graded the top five (three accepted, two rejected), but it fell short in three ways: a keyword matched inside other words and ranked four checkstyle chores first, the ordering favored issues filed in bulk the night before, and an issue with two open pull requests still reached grading. I changed the strategy so title words match whole words, issues created in the last three days are dropped, and every query excludes linked PRs. I confirmed only the last change, by checking that the claimed issue no longer appeared, and I have not re-run the scan to test the other two. I left the rubric unchanged and logged three gaps in it.
 
 **Unit 6: [one line on the tool work]**
 
